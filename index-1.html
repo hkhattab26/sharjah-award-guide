@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>اختار فئتك | جائزة الشارقة في المالية العامة</title>
+<style>
+:root{--navy:#182334;--gold:#b89552;--cream:#f6f1e6;--ink:#263244;--muted:#667085}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(135deg,#f7f3ea,#e9e1d0);font-family:Tahoma,Arial,sans-serif;color:var(--ink);line-height:1.8}
+.wrap{max-width:850px;margin:28px auto;padding:16px}.hero{background:var(--navy);color:#fff;border-radius:22px;padding:28px;text-align:center;border:1px solid #c6a66b;box-shadow:0 12px 30px #18233422}
+.hero .medal{font-size:42px;color:#d6b875}.hero h1{margin:5px 0;color:#f5dfaa}.hero p{margin:0;color:#e8e1d3}
+.card{background:white;border-radius:18px;padding:22px;margin-top:18px;box-shadow:0 8px 22px #18233412}
+h2{font-size:20px;margin:0 0 12px;color:var(--navy)}label{display:block;font-weight:bold;margin:13px 0 6px}
+select,input{width:100%;padding:13px;border:1px solid #d7d1c5;border-radius:11px;font:inherit;background:#fff;color:var(--ink)}
+.tabs{display:flex;gap:10px}.tabs button,.action{border:0;border-radius:12px;padding:12px 18px;font:inherit;cursor:pointer}
+.tabs button{flex:1;background:#eee8dc;color:var(--navy)}.tabs button.active,.action{background:var(--gold);color:#fff;font-weight:bold}
+.action{width:100%;margin-top:18px}.hint{font-size:13px;color:var(--muted)}
+.result{display:none;border:1px solid var(--gold);background:#fffcf5;border-radius:14px;padding:18px;margin-top:18px}
+.pill{display:inline-block;background:#eee4cf;color:#6b5427;border-radius:20px;padding:3px 11px;font-size:12px}
+ul{padding-right:22px}.footer{text-align:center;color:#667085;font-size:12px;margin:18px}
+</style>
+</head>
+<body><main class="wrap">
+<header class="hero"><div class="medal">✦</div><h1>اختار فئتك</h1><p>بوابتك لاكتشاف فئتك في جائزة الشارقة في المالية العامة</p><p>الدورة الرابعة 2026–2027</p></header>
+<section class="card">
+<h2>ابدأ رحلتك</h2>
+<div class="tabs"><button id="individual" class="active" onclick="setType('individual')">مشاركة فردية</button><button id="institution" onclick="setType('institution')">مشاركة مؤسسية</button></div>
+<label for="category">اختر الفئة الأقرب لطبيعة عملك أو نشاطك</label><select id="category"></select>
+<label for="focus">ما مجال الإنجاز الأبرز؟</label><select id="focus">
+<option>تطوير وتحسين إجراءات العمل</option><option>القيادة وتحقيق النتائج</option><option>الابتكار والتحول الرقمي</option><option>الرقابة والتدقيق وإدارة المخاطر</option><option>البحث العلمي ونشر المعرفة</option><option>التدريب وبناء القدرات</option><option>إدارة المشروعات</option><option>تحسين الخدمات المالية</option><option>الاستدامة المالية</option>
+</select>
+<label for="proof">ما الأدلة المتاحة لديك؟</label><select id="proof"><option>تقارير ومستندات رسمية</option><option>مؤشرات أداء ونتائج موثقة</option><option>شهادات وتكريمات</option><option>أبحاث ودراسات</option><option>ما زلت أجمع الأدلة</option></select>
+<button class="action" onclick="showResult()">اعرض بطاقة الاختيار المبدئي</button>
+<div id="result" class="result"></div>
+<p class="hint">هذه أداة إرشادية أولية. اختيار الفئة لا يعني تحقق الأهلية أو قبول الترشح. يجب مراجعة وصف الفئة وشروطها ومعاييرها وأدلتها في الدليل الرسمي قبل التقديم.</p>
+</section>
+<section class="card"><h2>كيف تستخدم النتيجة؟</h2><ul><li>راجع الوصف الرسمي للفئة التي اخترتها.</li><li>طابق كل إنجاز مع معيار التقييم المرتبط به.</li><li>جهّز أدلة موثقة وحديثة تدعم الإنجاز.</li><li>تأكد من استيفاء شروط الأهلية والمواعيد الرسمية.</li></ul></section>
+<div class="footer">إعداد إرشادي للتوعية بجائزة الشارقة في المالية العامة • لا يمثل اعتمادًا رسميًا من الجهة المنظمة</div>
+</main>
+<script>
+const data={
+individual:[
+"مدير القطاع المالي العربي المتميز","المدير المالي العربي المتميز","مدير الموازنة العربي المتميز","مدير الضرائب العربي المتميز","مدير الحسابات العربي المتميز","مدير الأنظمة المالية الإلكترونية العربي المتميز","مدير المشتريات والعقود العربي المتميز","مدير الرقابة المالية العربي المتميز","رئيس القسم المالي العربي المتميز","المحاسب المالي العربي المتميز","الخبير المالي العربي المتميز","الباحث المالي العربي المتميز"],
+institution:[
+"الجهة المتميزة في المالية العامة","الجهة المتميزة في الأنظمة والتطبيقات المالية الإلكترونية","الجهة المتميزة في إدارة المشاريع المالية","الجهة المتميزة في الابتكار المالي","الجهة المتميزة في الرقابة والتدقيق وإدارة المخاطر المالية","الجهة المتميزة في تقديم الخدمات المالية","الجهة المتميزة في إدارة المشتريات والعقود والمناقصات والمزايدات والأصول الحكومية","الجهة المتميزة في إدارة النقد والصناديق السيادية والخدمات المالية المصرفية","الجهة المتميزة في إدارة صناديق التقاعد والضمان الاجتماعي","الجهة المتميزة في البحث العلمي المالي","الجهة المتميزة في تحقيق الاستدامة المالية","الجهة المتميزة في التدريب المالي"]};
+let type='individual';
+function setType(t){type=t;document.getElementById('individual').classList.toggle('active',t==='individual');document.getElementById('institution').classList.toggle('active',t==='institution');fill();document.getElementById('result').style.display='none'}
+function fill(){let s=document.getElementById('category');s.innerHTML='';data[type].forEach(x=>{let o=document.createElement('option');o.textContent=x;o.value=x;s.appendChild(o)})}
+function showResult(){let cat=document.getElementById('category').value,focus=document.getElementById('focus').value,proof=document.getElementById('proof').value;let r=document.getElementById('result');r.innerHTML='<span class="pill">بطاقة اختيار استرشادية</span><h2 style="margin-top:12px">'+cat+'</h2><p><b>مجال الإنجاز:</b> '+focus+'</p><p><b>الأدلة المتاحة:</b> '+proof+'</p><h3>الخطوة التالية</h3><ul><li>افتح وصف الفئة ومعاييرها التفصيلية في الدليل.</li><li>اربط إنجازاتك بالمعايير، ولا تكتفِ بوصف عام للنجاح.</li><li>اجمع مستندات رسمية تثبت النتائج والأثر.</li></ul><p class="hint">الفئة المعروضة هي الفئة التي اخترتها أنت؛ هذه النسخة لا تحسب درجة مطابقة ولا تصدر حكمًا بالأهلية. يلزم استكمال ربط المعايير والأدلة التفصيلية قبل اعتماد أداة ترشيح ذكية.</p>';r.style.display='block';r.scrollIntoView({behavior:'smooth',block:'nearest'})}
+fill();
+</script></body></html>
